@@ -1,0 +1,710 @@
+:root {
+  --main-color: hsl(196, 85%, 50%);
+  --hover-color: hsl(196, 85%, 40%);
+  --header-background-color: hsl(345, 4%, 19%);
+  --gold-color: #e2d810;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+button {
+  cursor: pointer;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* in small screen  */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* in medium screen  */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* in larges screens */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* end glolble rules  */
+
+/* start header style  */
+header {
+  background-color: hsl(345, 4%, 19%);
+  color: var(--main-color);
+  height: 70px;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+header .container ul.nav {
+  display: flex;
+  height: 100%;
+  z-index: 5;
+}
+header .container ul.nav li {
+  height: 100%;
+}
+header .container ul.nav li a {
+  color: var(--main-color);
+  /* display: inline-block; */
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  justify-content: center;
+}
+header a:hover {
+  background-color: hsl(345, 4%, 15%);
+  color: white;
+}
+header ul li#shop {
+  position: relative;
+}
+
+header .container li ul.shopping {
+  background-color: var(--header-background-color);
+  display: flex;
+  flex-direction: column;
+  /* display: none; */
+  transition: 0.5s;
+  position: absolute;
+  height: 0px;
+  overflow: hidden;
+}
+header .container li ul.shopping.active {
+  height: 200px;
+  z-index: 999;
+}
+header .container li ul.shopping li {
+  padding: 5px 15px 0px 15px;
+  border-bottom: 0.5px solid #eee;
+}
+header .container .menubar {
+  display: none;
+}
+/* start responsive header here  */
+@media screen and (max-width: 992px) {
+  header {
+    position: relative;
+  }
+
+  header .container ul.nav {
+    /* height: 0; */
+    overflow: hidden;
+    transition: 0.5s;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    background-color: var(--header-background-color);
+    height: fit-content;
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+    height: 0;
+    border-top: 0.5px solid #eee;
+  }
+  header .container ul.nav.smallactive {
+    height: 300px;
+  }
+  header .container .menubar {
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  header .container li ul.shopping li {
+    height: 50px;
+    border: none;
+    padding: 0;
+  }
+  header .container li ul.shopping.active {
+    flex-direction: row;
+    background-color: var(--header-background-color);
+    top: 100%;
+    height: 50px;
+    width: 100%;
+    justify-content: space-around;
+  }
+  header .container li ul.shopping li a {
+    width: 100%;
+    height: 100%;
+    /* padding:5px 10px;  */
+  }
+}
+/* end responsive header */
+/* end  header style  */
+
+/* start landing  */
+.landing {
+  height: calc(100vh - 70px);
+  background-image: url(../images/landing.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-top: 3%;
+}
+.landing .overlay {
+  background-color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  z-index: 3;
+}
+.landing .container {
+  position: inherit;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--gold-color);
+  width: 40%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.landing .container .text {
+  color: #322e2f;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.landing .container .image {
+  overflow: hidden;
+}
+.landing img {
+  width: 100%;
+  height: 300px;
+  transition: 0.5s;
+  transform: scale(0);
+  transform: skew(0);
+}
+.landing .container a:hover img {
+  transform: scale(1.5) skew(20deg);
+}
+.landing .container button {
+  width: 40%;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--header-background-color);
+  color: var(--main-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.landing .container button:hover {
+  background-color: var(--main-color);
+  color: var(--header-background-color);
+}
+/* respoisive landing  */
+
+@media (max-width: 992px) {
+}
+/* Media query for small screens */
+
+@media (max-width: 768px) {
+  .landing {
+    /* Allow the content to dictate the height */
+    padding-top: 5%;
+  }
+
+  .landing .container {
+    width: 90%; /* Increase the width to fit the screen */
+    gap: 15px;
+  }
+
+  .landing img {
+    height: auto; /* Remove fixed height for images on mobile */
+    transform: scale(1); /* No skew or scale initially */
+  }
+
+  .landing .container .text {
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .landing .container button {
+    width: 100%; /* Make button full width on mobile */
+  }
+
+  .landing .container a:hover img {
+    transform: scale(1.1) skew(0); /* Subtle hover effect */
+  }
+}
+/* end responsive landng  */
+/* end landing  */
+.compo {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--header-background-color);
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--hover-color);
+}
+.compo h2 {
+  position: relative;
+  width: fit-content;
+  padding: 10px 20px;
+  transition: 0.5s;
+  cursor: default;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+/* buttons of shop */
+#tvphoneaccbuttons{
+  display: flex;
+  flex-direction:row;
+  gap:20px;
+  justify-content: center;
+}
+#tvphoneaccbuttons button{
+padding:10px 20px;
+border:none;
+font-weight: bold;
+text-transform: capitalize;
+background-color:var(--main-color);
+color:var(--header-background-color);
+transition:.5s;
+}
+#tvphoneaccbuttons button:hover{
+background-color:var(--header-background-color);
+color:var(--main-color);
+}
+.compo h2::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--gold-color);
+  left: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+  z-index: -3;
+}
+.compo h2::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--gold-color);
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.4s;
+  z-index: -3;
+}
+.compo h2:hover {
+  color: var(--header-background-color);
+}
+.compo h2:hover::after {
+  border-radius: 0;
+  width: 50%;
+  right: 0;
+  padding: 20px;
+}
+.compo h2:hover::before {
+  width: 50%;
+  left: 0;
+  border-radius: 0;
+  padding: 20px 0;
+}
+/* start about */
+.about {
+  padding: 60px 0;
+  background-color: var(--main-color);
+  z-index: -5;
+}
+.about .container .text {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 40px;
+  line-height: 2;
+  font-size: large;
+}
+.about .container .text .bigabout {
+  display: block;
+}
+.about .container .text .smallabout {
+  display: none;
+}
+.about .container .text button {
+  width: 20%;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--gold-color);
+  font-weight: bold;
+  transition: 0.3s;
+}
+.about .container .text button:hover {
+  background-color: var(--header-background-color);
+  color: var(--gold-color);
+}
+/* start responsive about page */
+
+@media screen and (max-width: 700px) {
+  .compo h2::after {
+    display: none;
+  }
+  .compo h2::before {
+    display: none;
+  }
+  .compo h2 {
+    font-size: 18px;
+  }
+  .about {
+    padding: 30px 0;
+  }
+  .about .container .text {
+    font-size: 12px;
+    list-style: 1.2;
+  }
+  .about .container .text button {
+    width: 50%;
+  }
+  .about .container .text .bigabout {
+    display: none;
+  }
+  .about .container .text .smallabout {
+    display: block;
+  }
+}
+
+/* end   responsive about page */
+
+/* end about */
+/* star shop style */
+.theshop {
+  background-color: var(--header-background-color);
+  padding: 60px 0;
+  position: relative;
+}
+.theshop .compo h2 {
+  color: var(--main-color);
+}
+.theshop .compo h2::after {
+  background-color: var(--main-color);
+}
+.theshop .compo h2::before {
+  background-color: var(--main-color);
+}
+.theshop .compo h2:hover {
+  color: var(--header-background-color);
+}
+.theshop .container .phones {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  grid-gap: 30px;
+  /* overflow: hidden; */
+  padding: 30px 0;
+}
+.theshop .container .phones .box {
+  height: 500px;
+  text-align: center;
+  overflow: auto;
+  /* box-shadow: rgba(256, 256, 256, 0.1) 0px 4px 12px; */
+  transition: 0.5s;
+  border: 1px solid var(--main-color);
+  position: relative;
+}
+.theshop .container .phones .box:hover {
+  box-shadow: rgba(256, 256, 256, 0.25) 0px 54px 55px,
+    rgba(256, 256, 256, 0.12) 0px -12px 30px,
+    rgba(256, 256, 256, 0.12) 0px 4px 6px,
+    rgba(256, 256, 256, 0.17) 0px 12px 13px,
+    rgba(256, 256, 256, 0.09) 0px -3px 5px;
+}
+.theshop .container .phones .box .image {
+  background-color: #eee;
+  margin-bottom: 20px;
+  margin: 20px 20px;
+}
+.theshop .container .phones .box img {
+  height: 200px;
+  width: 70%;
+}
+.theshop .container .phones .box .text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 10px;
+  color: var(--main-color);
+  width: 100%;
+  position: relative;
+}
+.theshop .container .phones .box .text p {
+  padding: 5px 0;
+}
+.theshop .container .phones .box .text h4.price {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gold-color);
+}
+.theshop .container .phones .box .text h4.price::after {
+  color: var(--gold-color);
+  content: "$";
+}
+/* hover box shadow */
+.theshop .buttons button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+.theshop .buttons button:hover {
+  background-color: var(--gold-color);
+}
+.theshop .buttons button.left {
+  left: 20px;
+}
+.theshop .buttons button.right {
+  right: 20px;
+}
+.theshop .container button {
+  background-color: gold;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  position: absolute;
+  transition: 0.5s;
+}
+.theshop .container button:hover {
+  background-color: var(--hover-color);
+  color: var(--header-background-color);
+}
+.theshop .container button.basket {
+  bottom: 30px;
+  left: 20px;
+}
+.theshop .container button.more {
+  bottom: 30px;
+  right: 20px;
+}
+@media (max-width: 768px) {
+  .theshop .compo h2:hover {
+    color: var(--main-color);
+  }
+}
+/* end shop style  */
+
+/* start contact us */
+.contact {
+  padding: 60px 0;
+  background-color: var(--main-color);
+}
+.contact .compo h2:hover {
+  color: var(--header-background-color);
+}
+.contact .container {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 25px 50px;
+  text-align: center;
+}
+
+.contact img {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact button,
+input {
+  overflow: visible;
+  height: 60px;
+  border: 0;
+  background: #f9f9f9;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.contact .submit {
+  background-color: var(--gold-color);
+  color: var(--header-background-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact .submit:hover {
+  background: var(--header-background-color);
+  color: var(--main-color);
+}
+
+.contact textarea {
+  resize: none;
+  height: 200px;
+  background: #f9f9f9;
+  border: 0;
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+@media (max-width: 991px) {
+  .contact .container {
+    flex-direction: column;
+  }
+}
+
+/* end contact  */
+
+/* start footer  */
+
+footer {
+  padding: 100px 0 0 0;
+  background-color: var(--header-background-color);
+  color: var(--main-color);
+}
+
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+footer .container .info .social {
+  display: flex;
+  gap: 10px;
+}
+
+footer .container .info .social i {
+  color: var(--main-color);
+}
+
+footer .container .info p {
+  color: #777;
+  line-height: 2;
+  margin-top: 20px;
+}
+
+/* ul  */
+footer .container .thelinks .links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+footer .container .thelinks .links li:not(:last-child) {
+  border-bottom: 1px solid #444;
+  color: white;
+}
+
+footer .container .thelinks .links li a {
+  color: #b9b9b9;
+  display: block;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+footer .thelinks .links li a::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\F101";
+  font-weight: 900;
+  margin-right: 10px;
+  color: var(--main-color);
+}
+
+footer .container .thelinks .links li:hover a {
+  padding-left: 10px;
+  color: white;
+}
+
+footer .container .addres {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #ccc;
+}
+
+footer .container .gel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer .container .gel .half {
+  display: flex;
+  gap: 10px;
+}
+
+footer img {
+  max-width: 60px;
+}
+
+footer .copyright {
+  padding: 25px 0;
+  text-align: center;
+  color: white;
+  margin: 50px 0 0;
+  border-top: 1px solid #444;
+}
+
+footer .container h1 {
+  margin-top: 0;
+}
+
+footer .container .box {
+  margin-top: -10px;
+}
+/* end footer  */

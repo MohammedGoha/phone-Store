@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: hsl(345, 4%, 19%);
+  color: hsl(196, 85%, 50%);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: hsl(345, 4%, 15%);
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+.phone-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.phone {
+  background-color: hsl(345, 4%, 15%);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  width: calc(33.333% - 40px);
+}
+
+.phone img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.phone h4 {
+  margin: 10px 0;
+}
+
+.phone h6 {
+  color: hsl(196, 85%, 70%);
+}
+
+.checkout {
+  background-color: hsl(345, 4%, 15%);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.checkout h2 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin: 10px 0 5px;
+}
+
+form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid hsl(196, 85%, 50%);
+  border-radius: 4px;
+  background-color: hsl(345, 4%, 25%);
+  color: hsl(196, 85%, 70%);
+}
+
+form input::placeholder {
+  color: hsl(196, 85%, 70%);
+}
+img {
+  width: 200px;
+  height: 300px;
+}
+form button {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: hsl(196, 85%, 50%);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #e2d810;
+}
+#totalPrice {
+  text-align: center;
+  color: #e2d810;
+}
+@media (max-width: 992px) {
+  .phone {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 600px) {
+  .phone {
+    width: calc(100% - 40px);
+  }
+}

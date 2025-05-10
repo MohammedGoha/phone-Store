@@ -1,0 +1,139 @@
+:root {
+  --main-color: hsl(196, 85%, 50%);
+  --hover-color: hsl(196, 85%, 40%);
+  --header-background-color: hsl(345, 4%, 19%);
+  --gold-color: #e2d810;
+}
+.thebasket {
+  background-color: var(--header-background-color);
+  /* min-width: 100wh; */
+}
+.thebasket .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding-top: 50px;
+  gap: 30px;
+}
+@media (max-width: 700px) {
+  .buttons.thebasket {
+    /* grid-template-columns: 1fr; Single column for small screens */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+}
+.thebasket .container .box {
+  /* height: 400px; */
+  text-align: center;
+  overflow: auto;
+  /* box-shadow: rgba(256, 256, 256, 0.1) 0px 4px 12px; */
+  transition: 0.5s;
+  border: 1px solid var(--main-color);
+  position: relative;
+}
+.thebasket .container .box h4,
+.thebasket .container .box h6 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 10px;
+  color: var(--main-color);
+  width: 100%;
+  position: relative;
+}
+.thebasket > h2 {
+  color: var(--gold-color);
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+}
+.thebasket .container .box h2 {
+  color: var(--gold-color);
+}
+.thebasket .container .box h2::after {
+  content: "$";
+}
+.thebasket .container .box h6 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: fit-content;
+}
+
+.thebasket .container .box:hover {
+  box-shadow: rgba(256, 256, 256, 0.25) 0px 54px 55px,
+    rgba(256, 256, 256, 0.12) 0px -12px 30px,
+    rgba(256, 256, 256, 0.12) 0px 4px 6px,
+    rgba(256, 256, 256, 0.17) 0px 12px 13px,
+    rgba(256, 256, 256, 0.09) 0px -3px 5px;
+}
+.thebasket .container .box .image {
+  background-color: #eee;
+  margin-bottom: 20px;
+  margin: 20px 20px;
+}
+.thebasket .container .box img {
+  height: 200px;
+  width: 70%;
+}
+.thebasket .container .image {
+  padding: 20px;
+  overflow: hidden;
+}
+.thebasket img {
+  max-width: 100%;
+  /* width: 200px;
+  height: 300px; */
+}
+.thebasket .remove:hover {
+  color: hsl(0, 100%, 30%);
+}
+.thebasket button {
+  color: var(--main-color);
+  background-color: hsl(0, 100%, 30%);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  transition: 0.3s;
+}
+.thebasket button:hover {
+  background-color: hsl(0, 100%, 30%);
+  background-color: var(--main-color);
+}
+
+.buttons.thebasket {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.buttons.thebasket button {
+  background-color: var(--main-color);
+}
+.buttons.thebasket button:hover {
+  color: var(--main-color);
+  background-color: hsl(0, 100%, 30%);
+}
+.buttons.thebasket button {
+  margin: 0;
+  color: hsl(0, 100%, 30%);
+}
+.buttons.thebasket a {
+  color: var(main);
+  padding: 10px 20px;
+}
+.buttons.thebasket button:hover a {
+  color: var(--main-color);
+}
+#emtpy {
+  display: none;
+}
+#emtpy.active {
+  display: block !important;
+  text-align: center;
+  background-color: var(--main-color);
+  font-weight: bold;
+}
+button {
+  font-weight: bold;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Store</title>
+    <link rel="stylesheet" href="css/paying.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="css/fontawesome-free-6.1.2-web/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Goha Store</h1>
+    </header>
+    <main>
+      <section class="phone-list">
+        <!-- Phones will be inserted here by JavaScript -->
+      </section>
+      <h2 id="totalPrice"></h2>
+      <section class="checkout">
+        <h2>Checkout</h2>
+        <form id="checkout-form">
+          <label for="card-number">Card Number:</label>
+          <input type="text" id="card-number" name="card-number" required />
+          <label for="card-name">Cardholder Name:</label>
+          <input type="text" id="card-name" name="card-name" required />
+          <button type="submit">Buy Now</button>
+          <h5 id="count"></h5>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="info box">
+          <h1>Goha Store</h1>
+          <ul class="social">
+            <li>
+              <a
+                href="https://www.facebook.com/profile.php?id=100004378866005"
+                class="facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="youtube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </li>
+          </ul>
+          <p>
+            Goha Store is your go-to destination for affordable, high-quality
+            products across fashion, electronics, and home essentials. We
+            prioritize customer satisfaction with fast shipping and excellent
+            service.
+          </p>
+        </div>
+
+        <div class="thelinks box">
+          <ul class="links">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#theshop">shop</a></li>
+            <li><a href="#contact">Contact US</a></li>
+            <!-- <li><a href="#">Important Link 5</a></li> -->
+          </ul>
+        </div>
+        <div class="addres box">
+          <p>Egypt, Qalyubia, Benha, Mujul</p>
+          <p>Business Hours: From 10:00 To 18:00</p>
+          <span>+201550470883</span>
+          <span>+201149081315</span>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2024 Goha Store. All rights reserved.</p>
+    </footer>
+    <!-- <script src="paying.js"></script> -->
+    <script type="module" src="paying.js"></script>
+  </body>
+</html>
