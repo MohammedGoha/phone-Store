@@ -78,13 +78,13 @@ function handleCheckout(event) {
         card.balance -= total;
         alert(`balance before checkout: ${card.balance}`);
         alert("payment successful!");
-        window.location.href = "main.html";
+        window.location.href = "index.html";
       } else {
         alert("payment failed! \n the card under price ");
       }
     } else {
       alert("add something to the basket first");
-      location.href = "main.html#theshop";
+      location.href = "index.html#theshop";
     }
   } else {
     alert("Invalid card details. Please try again.");

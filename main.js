@@ -360,7 +360,7 @@ function ReadMore() {
             <h3>${phone.price}</h3>
             <div class="buttons">
               <button type="button" class="back">
-                <a href="main.html">back</a>
+                <a href="index.html">back</a>
               </button>
               <button type="button" onclick="basketbuttoninopend()" class="basket">
                 <a >go to basket </a>
